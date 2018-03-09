@@ -15,10 +15,12 @@
     "minimum-stability": "stable",
     "require": {
         "php": ">=5.4.0",
-        "yiisoft/yii2": "~2.0.6",
+        "yiisoft/yii2": "2.0.13",
         "yiisoft/yii2-bootstrap": "~2.0.0",
         "yiisoft/yii2-swiftmailer": "~2.0.0 || ~2.1.0",
-        "yiister/yii2-gentelella": "~1.0"
+        "yiister/yii2-gentelella": "~1.0",
+        "vova07/yii2-imperavi-widget": "*",
+        "zxbodya/yii2-gallery-manager": "*@dev"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

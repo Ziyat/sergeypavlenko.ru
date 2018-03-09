@@ -41,6 +41,7 @@
           <root url="file://$MODULE_DIR$/vendor/bower-asset/gentelella" />
           <root url="file://$MODULE_DIR$/vendor/bower-asset/inputmask" />
           <root url="file://$MODULE_DIR$/vendor/bower-asset/jquery" />
+          <root url="file://$MODULE_DIR$/vendor/bower-asset/jquery-ui" />
           <root url="file://$MODULE_DIR$/vendor/bower-asset/punycode" />
           <root url="file://$MODULE_DIR$/vendor/bower-asset/typeahead.js" />
           <root url="file://$MODULE_DIR$/vendor/bower-asset/yii2-pjax" />
@@ -57,6 +58,7 @@
           <root url="file://$MODULE_DIR$/vendor/fortawesome/font-awesome" />
           <root url="file://$MODULE_DIR$/vendor/fzaninotto/faker" />
           <root url="file://$MODULE_DIR$/vendor/guzzlehttp/psr7" />
+          <root url="file://$MODULE_DIR$/vendor/imagine/imagine" />
           <root url="file://$MODULE_DIR$/vendor/myclabs/deep-copy" />
           <root url="file://$MODULE_DIR$/vendor/phar-io/manifest" />
           <root url="file://$MODULE_DIR$/vendor/phar-io/version" />
@@ -97,6 +99,7 @@
           <root url="file://$MODULE_DIR$/vendor/symfony/polyfill-mbstring" />
           <root url="file://$MODULE_DIR$/vendor/symfony/yaml" />
           <root url="file://$MODULE_DIR$/vendor/theseer/tokenizer" />
+          <root url="file://$MODULE_DIR$/vendor/vova07/yii2-imperavi-widget" />
           <root url="file://$MODULE_DIR$/vendor/webmozart/assert" />
           <root url="file://$MODULE_DIR$/vendor/yiisoft/yii2" />
           <root url="file://$MODULE_DIR$/vendor/yiisoft/yii2-bootstrap" />
@@ -104,8 +107,11 @@
           <root url="file://$MODULE_DIR$/vendor/yiisoft/yii2-debug" />
           <root url="file://$MODULE_DIR$/vendor/yiisoft/yii2-faker" />
           <root url="file://$MODULE_DIR$/vendor/yiisoft/yii2-gii" />
+          <root url="file://$MODULE_DIR$/vendor/yiisoft/yii2-imagine" />
+          <root url="file://$MODULE_DIR$/vendor/yiisoft/yii2-jui" />
           <root url="file://$MODULE_DIR$/vendor/yiisoft/yii2-swiftmailer" />
           <root url="file://$MODULE_DIR$/vendor/yiister/yii2-gentelella" />
+          <root url="file://$MODULE_DIR$/vendor/zxbodya/yii2-gallery-manager" />
         </CLASSES>
         <SOURCES>
           <root url="file://$MODULE_DIR$/vendor/behat/gherkin" />
@@ -113,6 +119,7 @@
           <root url="file://$MODULE_DIR$/vendor/bower-asset/gentelella" />
           <root url="file://$MODULE_DIR$/vendor/bower-asset/inputmask" />
           <root url="file://$MODULE_DIR$/vendor/bower-asset/jquery" />
+          <root url="file://$MODULE_DIR$/vendor/bower-asset/jquery-ui" />
           <root url="file://$MODULE_DIR$/vendor/bower-asset/punycode" />
           <root url="file://$MODULE_DIR$/vendor/bower-asset/typeahead.js" />
           <root url="file://$MODULE_DIR$/vendor/bower-asset/yii2-pjax" />
@@ -129,6 +136,7 @@
           <root url="file://$MODULE_DIR$/vendor/fortawesome/font-awesome" />
           <root url="file://$MODULE_DIR$/vendor/fzaninotto/faker" />
           <root url="file://$MODULE_DIR$/vendor/guzzlehttp/psr7" />
+          <root url="file://$MODULE_DIR$/vendor/imagine/imagine" />
           <root url="file://$MODULE_DIR$/vendor/myclabs/deep-copy" />
           <root url="file://$MODULE_DIR$/vendor/phar-io/manifest" />
           <root url="file://$MODULE_DIR$/vendor/phar-io/version" />
@@ -169,6 +177,7 @@
           <root url="file://$MODULE_DIR$/vendor/symfony/polyfill-mbstring" />
           <root url="file://$MODULE_DIR$/vendor/symfony/yaml" />
           <root url="file://$MODULE_DIR$/vendor/theseer/tokenizer" />
+          <root url="file://$MODULE_DIR$/vendor/vova07/yii2-imperavi-widget" />
           <root url="file://$MODULE_DIR$/vendor/webmozart/assert" />
           <root url="file://$MODULE_DIR$/vendor/yiisoft/yii2" />
           <root url="file://$MODULE_DIR$/vendor/yiisoft/yii2-bootstrap" />
@@ -176,8 +185,11 @@
           <root url="file://$MODULE_DIR$/vendor/yiisoft/yii2-debug" />
           <root url="file://$MODULE_DIR$/vendor/yiisoft/yii2-faker" />
           <root url="file://$MODULE_DIR$/vendor/yiisoft/yii2-gii" />
+          <root url="file://$MODULE_DIR$/vendor/yiisoft/yii2-imagine" />
+          <root url="file://$MODULE_DIR$/vendor/yiisoft/yii2-jui" />
           <root url="file://$MODULE_DIR$/vendor/yiisoft/yii2-swiftmailer" />
           <root url="file://$MODULE_DIR$/vendor/yiister/yii2-gentelella" />
+          <root url="file://$MODULE_DIR$/vendor/zxbodya/yii2-gallery-manager" />
         </SOURCES>
       </library>
     </orderEntry>

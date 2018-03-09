@@ -42,7 +42,8 @@ return [
             'showScriptName' => false,
             'rules' => [
                 '' => 'site/index',
-                '<action:(about|contact|login|signup)>' => 'site/<action>',
+                '<alias:[\w-]+>' => 'site/page',
+//                '<action:(about|contact|login|signup)>' => 'site/<action>',
                 'captcha' => 'site/captcha',
                 '<_c:[\w\-]+>' => '<_c>/index',
                 '<_c:[\w\-]+>/<id:[\d+]+>/<seria:[\d+]+>' => '<_c>/view',

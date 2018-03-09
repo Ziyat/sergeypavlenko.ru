@@ -1,6 +1,7 @@
 <?php
 namespace frontend\controllers;
 
+use backend\entities\Page;
 use Yii;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
@@ -12,6 +13,7 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
+use yii\web\NotFoundHttpException;
 
 /**
  * Site controller
@@ -138,10 +140,28 @@ class SiteController extends Controller
      *
      * @return mixed
      */
-    public function actionAbout()
+    public function actionBiography()
     {
-        return $this->render('about');
+        return $this->render('biography');
     }
+
+    public function actionPage($alias = null)
+    {
+        if($page = Page::find()->select([
+            "id",
+            'title' => "title",
+            'text' => "text"
+        ])
+            ->where( ['alias' => $alias])
+            ->one()){
+
+            return $this->render('page', [
+                'entity' => $page
+            ]);
+        }
+        throw new NotFoundHttpException('Указанная страница не найдена');
+    }
+
 
     /**
      * Signs user up.
