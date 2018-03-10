@@ -13,18 +13,47 @@ use zxbodya\yii2\galleryManager\GalleryManager;
 ?>
 
 <div class="row">
-    <div class="col-md-6">
-        <?php $form = ActiveForm::begin(); ?>
-        <div class="form-group">
-            <?= Html::submitButton('Сохранить', ['class' => 'btn btn-block btn-success']) ?>
+    <?php $form = ActiveForm::begin(); ?>
+    <div class="col-md-8">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
+                <?= $form->field($model, 'text')->widget(Widget::className(), [
+                    'settings' => [
+                        'lang' => 'ru',
+                        'minHeight' => 200,
+                        'imageUpload' => Url::to(['/page/image-upload']),
+                        'plugins' => [
+                            'clips',
+                            'fullscreen',
+                            'table',
+                            'video',
+                        ]
+                    ]
+                ]) ?>
+            </div>
         </div>
-        <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
-        <?= $form->field($model, 'alias',[
-                'template'=>'{label}<div class="input-group">
-                <span class="input-group-addon" id="basic-addon3">'.Yii::$app->params['frontendHostInfo'].'/</span>{input}</div>{hint}{error}']
-        )->textInput(['maxlength' => true]) ?>
     </div>
-    <div class="col-md-6">
+        <div class="col-md-4 pull-right">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <?= $form->field($model, 'status')->dropDownList([
+                        Page::PUBLISHED => 'Опубликованный', Page::UNPUBLISHED => 'Не опубликованный'
+                    ]) ?>
+                    <?= $form->field($model, 'alias',[
+                            'template'=>'{label}<div class="input-group">
+                    <span class="input-group-addon" id="basic-addon3">'.Yii::$app->params['frontendHostInfo'].'/</span>{input}</div>{hint}{error}']
+                    )->textInput(['maxlength' => true]) ?>
+                    <div class="form-group">
+                        <?= Html::submitButton('Сохранить', ['class' => 'btn btn-block btn-success']) ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <?php ActiveForm::end(); ?>
+    <div class="col-md-12">
+
         <?php if ($model->isNewRecord): ?>
             <p>Can not upload images for new record</p>
         <?php else: ?>
@@ -35,28 +64,6 @@ use zxbodya\yii2\galleryManager\GalleryManager;
             ]);
             ?>
         <?php endif; ?>
-    </div>
-    <div class="col-md-12">
-        <?= $form->field($model, 'text')->widget(Widget::className(), [
-            'settings' => [
-                'lang' => 'ru',
-                'minHeight' => 200,
-                'imageUpload' => Url::to(['/page/image-upload']),
-                'plugins' => [
-                    'clips',
-                    'fullscreen',
-                    'table',
-                    'video',
-                ]
-            ]
-        ]) ?>
-        <?= $form->field($model, 'status')->dropDownList([Page::PUBLISHED => 'Опубликованный', Page::UNPUBLISHED => 'Не опубликованный']) ?>
-
-        <div class="form-group">
-            <?= Html::submitButton('Сохранить', ['class' => 'btn btn-block btn-success']) ?>
-        </div>
-
-        <?php ActiveForm::end(); ?>
     </div>
 
 </div>

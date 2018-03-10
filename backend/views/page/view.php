@@ -27,9 +27,21 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'title',
+
+            [
+                    'attribute' => 'status',
+                    'value' => function($model){
+                        return $model->status == \backend\entities\Page::PUBLISHED ? 'Опубликованный' : 'Не опубликованный';
+                    }
+            ],
+            [
+                    'attribute' => 'alias',
+                    'value' => function($model){
+                        return Html::a('Перейти',Yii::$app->params['frontendHostInfo'].'/'.$model->alias);
+                    },
+                    'format' => 'raw'
+            ],
             'text:html',
-            'status',
-            'alias',
             'created_at:datetime',
             'updated_at:datetime',
         ],

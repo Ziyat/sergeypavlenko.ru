@@ -6,6 +6,7 @@ source /app/vagrant/provision/common.sh
 
 info "Provision-script user: `whoami`"
 
+
 info "Restart web-stack"
 service php7.0-fpm restart
 service nginx restart

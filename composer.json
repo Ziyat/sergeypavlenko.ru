@@ -20,7 +20,8 @@
         "yiisoft/yii2-swiftmailer": "~2.0.0 || ~2.1.0",
         "vova07/yii2-imperavi-widget": "*",
         "zxbodya/yii2-gallery-manager": "*@dev",
-        "dmstr/yii2-adminlte-asset": "2.6.0"
+        "dmstr/yii2-adminlte-asset": "2.6.0",
+        "yii2mod/yii2-comments": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
