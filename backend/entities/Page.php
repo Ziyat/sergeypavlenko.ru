@@ -4,6 +4,7 @@ namespace backend\entities;
 
 use Yii;
 use yii\db\ActiveRecord;
+use zxbodya\yii2\galleryManager\GalleryBehavior;
 
 /**
  * This is the model class for table "page".
@@ -68,12 +69,56 @@ class Page extends \yii\db\ActiveRecord
                     ActiveRecord::EVENT_BEFORE_INSERT => ['created_at', 'updated_at'],
                     ActiveRecord::EVENT_BEFORE_UPDATE => ['updated_at'],
                 ],
+            ],
+            'galleryBehavior' => [
+                'class' => GalleryBehavior::className(),
+                'type' => 'page',
+                'extension' => 'jpg',
+                'directory' => \Yii::$app->params['imagesPath'] . 'gallery',
+                'url' => \Yii::$app->params['frontendHostInfo'] . Yii::$app->params['imagesUrl']. 'gallery',
+                'versions' => [
+                    'small' => function ($img) {
+                        /** @var \Imagine\Image\ImageInterface $img */
+                        return $img
+                            ->copy()
+                            ->thumbnail(new \Imagine\Image\Box(200, 200));
+                    },
+                    'medium' => function ($img) {
+                        /** @var Imagine\Image\ImageInterface $img */
+                        $dstSize = $img->getSize();
+                        $maxWidth = 800;
+                        if ($dstSize->getWidth() > $maxWidth) {
+                            $dstSize = $dstSize->widen($maxWidth);
+                        }
+                        return $img
+                            ->copy()
+                            ->resize($dstSize);
+                    },
+                ]
             ]
         ];
     }
 
     public static function getStatusArray(){
         return [self::PUBLISHED => 'Опубликованный', self::UNPUBLISHED => 'Не опубликованный'];
+
+    }
+    public static function getNavArray(){
+        $pages = self::find()->where(['status' => self::PUBLISHED])->asArray()->all();
+        $result = [
+            [
+                'label' => 'Главная',
+                'url' =>['/site/index']
+            ]
+        ];
+        $i=1;
+        foreach($pages as $page){
+            $result[$i]['label'] = $page['title'];
+            $result[$i]['url'] = ['/site/page', 'alias' =>$page['alias']];
+            $i++;
+        }
+
+        return $result;
 
     }
 }

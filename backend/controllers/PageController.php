@@ -8,6 +8,7 @@ use backend\entities\PageSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use zxbodya\yii2\galleryManager\GalleryManagerAction;
 
 /**
  * PageController implements the CRUD actions for Page model.
@@ -36,7 +37,14 @@ class PageController extends Controller
                 'class' => 'vova07\imperavi\actions\UploadFileAction',
                 'url' => Yii::$app->params['frontendHostInfo'].\Yii::$app->params['imagesUrl'], // Directory URL address, where files are stored.
                 'path' => \Yii::$app->params['imagesPath'],
-            ]
+            ],
+            'galleryApi' => [
+                'class' => GalleryManagerAction::className(),
+                // mappings between type names and model classes (should be the same as in behaviour)
+                'types' => [
+                    'page' => Page::className()
+                ]
+            ],
         ];
     }
 

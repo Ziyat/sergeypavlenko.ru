@@ -5,41 +5,61 @@ use yii\widgets\ActiveForm;
 use backend\entities\Page;
 use yii\helpers\Url;
 use vova07\imperavi\Widget;
+use zxbodya\yii2\galleryManager\GalleryManager;
 
 /* @var $this yii\web\View */
 /* @var $model backend\entities\Page */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="col-md-6">
-
-    <?php $form = ActiveForm::begin(); ?>
-
-    <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'text')->widget(Widget::className(), [
-        'settings' => [
-            'lang' => 'ru',
-            'minHeight' => 200,
-            'imageUpload' => Url::to(['/page/image-upload']),
-            'plugins' => [
-                'clips',
-                'fullscreen',
-                'table',
-                'video',
+<div class="row">
+    <div class="col-md-6">
+        <?php $form = ActiveForm::begin(); ?>
+        <div class="form-group">
+            <?= Html::submitButton('Сохранить', ['class' => 'btn btn-block btn-success']) ?>
+        </div>
+        <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
+        <?= $form->field($model, 'alias',[
+                'template'=>'{label}<div class="input-group">
+                <span class="input-group-addon" id="basic-addon3">'.Yii::$app->params['frontendHostInfo'].'/</span>{input}</div>{hint}{error}']
+        )->textInput(['maxlength' => true]) ?>
+    </div>
+    <div class="col-md-6">
+        <?php if ($model->isNewRecord): ?>
+            <p>Can not upload images for new record</p>
+        <?php else: ?>
+            <?= GalleryManager::widget([
+                'model' => $model,
+                'behaviorName' => 'galleryBehavior',
+                'apiRoute' => 'page/galleryApi'
+            ]);
+            ?>
+        <?php endif; ?>
+    </div>
+    <div class="col-md-12">
+        <?= $form->field($model, 'text')->widget(Widget::className(), [
+            'settings' => [
+                'lang' => 'ru',
+                'minHeight' => 200,
+                'imageUpload' => Url::to(['/page/image-upload']),
+                'plugins' => [
+                    'clips',
+                    'fullscreen',
+                    'table',
+                    'video',
+                ]
             ]
-        ]
-    ]) ?>
+        ]) ?>
+        <?= $form->field($model, 'status')->dropDownList([Page::PUBLISHED => 'Опубликованный', Page::UNPUBLISHED => 'Не опубликованный']) ?>
 
-    <?= $form->field($model, 'status')->dropDownList([Page::PUBLISHED => 'Опубликованный', Page::UNPUBLISHED => 'Не опубликованный']) ?>
+        <div class="form-group">
+            <?= Html::submitButton('Сохранить', ['class' => 'btn btn-block btn-success']) ?>
+        </div>
 
-    <?= $form->field($model, 'alias')->textInput(['maxlength' => true]) ?>
-
-    <div class="form-group">
-        <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>
+        <?php ActiveForm::end(); ?>
     </div>
 
-    <?php ActiveForm::end(); ?>
+</div>
 <?php
 
 $script = <<< JS
@@ -70,4 +90,4 @@ $this->registerJs(
     $script
 );
 ?>
-</div>
+

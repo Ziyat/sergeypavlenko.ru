@@ -1,6 +1,7 @@
 <?php
 
 /* @var $this \yii\web\View */
+
 /* @var $content string */
 
 use yii\helpers\Html;
@@ -29,58 +30,94 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => Yii::$app->name,
-        'brandUrl' => Yii::$app->homeUrl,
+//        'brandLabel' => Yii::$app->name,
+//        'brandUrl' => Yii::$app->homeUrl,
         'options' => [
-            'class' => 'navbar-inverse navbar-fixed-top',
+            'class' => 'navbar-default navbar-fixed-top',
         ],
     ]);
-    $menuItems = [
-        ['label' => 'Главная', 'url' => ['/site/index']],
-        ['label' => 'Биография', 'url' => ['/site/biography']],
-        ['label' => 'Отзывы', 'url' => ['/site/reviews']],
-        ['label' => 'Фотогалерея', 'url' => ['/site/photo-gallery']],
-        ['label' => 'Видео отзывы', 'url' => ['/site/video-reviews']],
-        ['label' => 'Контакты', 'url' => ['/site/contact']],
-    ];
-    if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-        $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
-    } else {
-        $menuItems[] = '<li>'
-            . Html::beginForm(['/site/logout'], 'post')
-            . Html::submitButton(
-                'Logout (' . Yii::$app->user->identity->username . ')',
-                ['class' => 'btn btn-link logout']
-            )
-            . Html::endForm()
-            . '</li>';
-    }
+    $menuItems = \backend\entities\Page::getNavArray();
+    //    if (Yii::$app->user->isGuest) {
+    //        $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
+    //        $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
+    //    } else {
+    //        $menuItems[] = '<li>'
+    //            . Html::beginForm(['/site/logout'], 'post')
+    //            . Html::submitButton(
+    //                'Logout (' . Yii::$app->user->identity->username . ')',
+    //                ['class' => 'btn btn-link logout']
+    //            )
+    //            . Html::endForm()
+    //            . '</li>';
+    //    }
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => $menuItems,
     ]);
     NavBar::end();
     ?>
+    <div id="headerwrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h1>Павленко Сергей Владимирович</h1>
+                    <h3>Массажист</h3>
+                    <h5>Новая методика лечения позвоночника</h5>
+                </div>
+            </div><!-- /row -->
+        </div> <!-- /container -->
+    </div><!-- /headerwrap -->
 
     <div class="container">
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
         <?= Alert::widget() ?>
-        <?= $content ?>
+        <div class="container mtb">
+            <?= $content ?>
+        </div>
     </div>
 </div>
 
-<footer class="footer">
+<div id="footerwrap">
     <div class="container">
-        <p class="pull-left">&copy; <?= Html::encode(Yii::$app->name) ?> <?= date('Y') ?></p>
+        <div class="row">
+            <div class="col-lg-4">
+                <h4>About</h4>
+                <div class="hline-w"></div>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s.</p>
+            </div>
+            <div class="col-lg-4">
+                <h4>Social Links</h4>
+                <div class="hline-w"></div>
+                <p>
+                    <a href="#"><i class="fa fa-dribbble"></i></a>
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                    <a href="#"><i class="fa fa-tumblr"></i></a>
+                </p>
+            </div>
+            <div class="col-lg-4">
+                <h4>Our Bunker</h4>
+                <div class="hline-w"></div>
+                <p>
+                    Some Ave, 987,<br/>
+                    23890, New York,<br/>
+                    United States.<br/>
+                </p>
+            </div>
 
-        <p class="pull-right"><?= Yii::powered() ?></p>
+        </div>
+        <! --/row -->
     </div>
-</footer>
+    <! --/container -->
+</div>
+<! --/footerwrap -->
 
 <?php $this->endBody() ?>
+
 </body>
 </html>
 <?php $this->endPage() ?>
