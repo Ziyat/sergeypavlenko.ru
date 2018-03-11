@@ -83,29 +83,31 @@ AppAsset::register($this);
     <div class="container">
         <div class="row">
             <div class="col-lg-4">
-                <h4>About</h4>
+                <h4>Биография</h4>
                 <div class="hline-w"></div>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500s.</p>
+                <p>Павленко Сергей Владимирович родился в Казахстане 11 сентября 1973 год, ведет активную
+                    профессиональную деятельность в области лечебного массажаболее 17-ти лет.</p>
             </div>
             <div class="col-lg-4">
-                <h4>Social Links</h4>
+                <h4>Cоциальные сети</h4>
                 <div class="hline-w"></div>
                 <p>
-                    <a href="#"><i class="fa fa-dribbble"></i></a>
+                    <a href="#"><i class="fa fa-vk"></i></a>
                     <a href="#"><i class="fa fa-facebook"></i></a>
-                    <a href="#"><i class="fa fa-twitter"></i></a>
                     <a href="#"><i class="fa fa-instagram"></i></a>
-                    <a href="#"><i class="fa fa-tumblr"></i></a>
+                    <a href="#"><i class="fa fa-odnoklassniki"></i></a>
                 </p>
             </div>
             <div class="col-lg-4">
-                <h4>Our Bunker</h4>
+                <h4>Связь</h4>
                 <div class="hline-w"></div>
                 <p>
-                    Some Ave, 987,<br/>
-                    23890, New York,<br/>
-                    United States.<br/>
+                    Телефон:<br>
+                    <a href="tel:89663086371">8 966 308 63 71</a> (RU)<br>
+                    <a href="tel:87772388339">8 777 238 83 39</a> (KZ)<br>
+                    Email:<br>
+                    <a href="mailto:sergey.pavlenko-ms@mail.ru">sergey.pavlenko-ms@mail.ru</a>
+
                 </p>
             </div>
 

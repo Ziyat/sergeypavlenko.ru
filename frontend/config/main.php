@@ -42,9 +42,9 @@ return [
             'showScriptName' => false,
             'rules' => [
                 '' => 'site/index',
-                '<alias:[\w-]+>' => 'site/page',
-//                '<action:(about|contact|login|signup)>' => 'site/<action>',
                 'captcha' => 'site/captcha',
+                '<action:(about|contact|login|signup)>' => 'site/<action>',
+                '<alias:[\w-]+>' => 'site/page',
                 '<_c:[\w\-]+>' => '<_c>/index',
                 '<_c:[\w\-]+>/<id:[\d+]+>/<seria:[\d+]+>' => '<_c>/view',
                 '<_c:[\w\-]+>/<id:[\d+]+>' => '<_c>/view',

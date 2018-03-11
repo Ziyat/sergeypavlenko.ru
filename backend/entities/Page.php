@@ -117,6 +117,10 @@ class Page extends \yii\db\ActiveRecord
             $result[$i]['url'] = ['/site/page', 'alias' =>$page['alias']];
             $i++;
         }
+        $result[]=[
+            'label' => 'Контакты',
+            'url' =>['/site/contact']
+        ];
 
         return $result;
 
