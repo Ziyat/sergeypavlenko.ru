@@ -95,7 +95,6 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/yiisoft/yii2-imagine" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/yiisoft/yii2-jui" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/yiisoft/yii2-swiftmailer" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/yiister/yii2-gentelella" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/zxbodya/yii2-gallery-manager" />
     </content>
     <orderEntry type="inheritedJdk" />

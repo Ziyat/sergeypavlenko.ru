@@ -16,7 +16,6 @@
       <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
       <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
       <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
-      <path value="$PROJECT_DIR$/vendor/yiister/yii2-gentelella" />
       <path value="$PROJECT_DIR$/vendor/fortawesome/font-awesome" />
       <path value="$PROJECT_DIR$/vendor/zxbodya/yii2-gallery-manager" />
       <path value="$PROJECT_DIR$/vendor/phpspec/php-diff" />
