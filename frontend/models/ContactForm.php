@@ -2,6 +2,7 @@
 
 namespace frontend\models;
 
+use SebastianBergmann\CodeCoverage\Report\PHP;
 use Yii;
 use yii\base\Model;
 
@@ -11,8 +12,9 @@ use yii\base\Model;
 class ContactForm extends Model
 {
     public $name;
+    public $phone;
     public $email;
-    public $subject;
+    public $date;
     public $body;
     public $verifyCode;
 
@@ -24,7 +26,7 @@ class ContactForm extends Model
     {
         return [
             // name, email, subject and body are required
-            [['name', 'email', 'subject', 'body'], 'required'],
+            [['name', 'email', 'date', 'body'], 'required'],
             // email has to be a valid email address
             ['email', 'email'],
             // verifyCode needs to be entered correctly
@@ -53,8 +55,8 @@ class ContactForm extends Model
         return Yii::$app->mailer->compose()
             ->setTo($email)
             ->setFrom([$this->email => $this->name])
-            ->setSubject($this->subject)
-            ->setTextBody($this->body)
+            ->setSubject('Запись на консультацию от ' . $this->name)
+            ->setTextBody($this->body . PHP_EOL .$this->phone)
             ->send();
     }
 }
