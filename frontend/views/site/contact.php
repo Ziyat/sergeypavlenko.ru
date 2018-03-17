@@ -35,9 +35,9 @@ $this->title = 'Контакты';
             <?= $form->field($model, 'email')->label('Эл.Почта') ?>
             <?= $form->field($model, 'phone')->label('Телефон') ?>
 
-            <?= $form->field($model, 'date')->label('Выберите дату и время:') ?>
+            <?= $form->field($model, 'date')->label('Выберите дату и время') ?>
 
-            <?= $form->field($model, 'body')->label('Опишите проблему:')->textarea(['rows' => 6]) ?>
+            <?= $form->field($model, 'body')->label('Опишите проблему   ')->textarea(['rows' => 6]) ?>
 
             <?= $form->field($model, 'verifyCode')->widget(Captcha::className(), [
                 'template' => '<div class="row"><div class="col-lg-3">{image}</div><div class="col-lg-6">{input}</div></div>',
